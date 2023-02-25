@@ -34,7 +34,7 @@ public class ClientSide {
 			int bytesRead;
 			while ((bytesRead = socketIn.read(cbuffer)) != -1) {
 				fileOut.write(cbuffer, 0, bytesRead);
-				System.out.println("Conteudo recebido: " + cbuffer);
+				System.out.println("Conteudo recebido: " + new String(cbuffer, 0, bytesRead));
 			}
 			fileOut.close();
 			clientSocket.close();
